@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MovieTest</string>
+    <string name="api_key">2c4f2811e9e5eb1da8c4938eb2f43de6</string>
+    <string name="api_read_token">eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYzRmMjgxMWU5ZTVlYjFkYThjNDkzOGViMmY0M2RlNiIsInN1YiI6IjY1Njc3YjYxMDIxY2VlMDEwMGNiMGE0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FmncZqMJ2dm1Ja_idcXI-psArznkF2qXUdZbi2ZstWA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
