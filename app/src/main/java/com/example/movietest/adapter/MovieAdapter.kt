@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movietest.R
-import com.example.movietest.prueba.MResponse
-import com.example.movietest.prueba.ResultCall
+import com.example.movietest.model.MResponse
+import com.example.movietest.model.ResultCall
 import com.example.movietest.viewholder.MovieViewHolder
 
 class MovieAdapter(

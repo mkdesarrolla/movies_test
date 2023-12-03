@@ -4,7 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.movietest.dao.MovieDAO
-import com.example.movietest.prueba.ResultCall
+import com.example.movietest.model.ResultCall
 import com.example.movietest.typeconverter.TypeConverter
 
 @TypeConverters(TypeConverter::class)

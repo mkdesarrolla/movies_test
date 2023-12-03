@@ -3,16 +3,13 @@ package com.example.movietest.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.movietest.model.MovieResponse
-import com.example.movietest.prueba.MResponse
-import com.example.movietest.prueba.ResultCall
+import com.example.movietest.model.MResponse
 import com.example.movietest.repository.MovieRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MovieViewModel: ViewModel() {
-    var movieList = MResponse(0, listOf(ResultCall()), 0, 0)
     var movieListLiveData = MutableLiveData<MResponse>()
 
     private val movieRepository = MovieRepository()

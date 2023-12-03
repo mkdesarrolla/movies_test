@@ -12,8 +12,8 @@ import androidx.room.Room
 import com.example.movietest.adapter.MovieAdapter
 import com.example.movietest.database.MovieDatabase
 import com.example.movietest.databinding.ActivityMainBinding
-import com.example.movietest.prueba.MResponse
-import com.example.movietest.prueba.ResultCall
+import com.example.movietest.model.MResponse
+import com.example.movietest.model.ResultCall
 import com.example.movietest.viewmodel.MovieViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -48,13 +48,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.idSV.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.i("onQueryTextSubmit", "Aquí llega")
                 movieViewModel.searchByName(query)
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                Log.i("onQueryTextChange", "Aquí llega")
                 onQueryTextSubmit(newText)
                 return false
             }

@@ -3,7 +3,7 @@ package com.example.movietest.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.movietest.prueba.ResultCall
+import com.example.movietest.model.ResultCall
 
 @Dao
 interface MovieDAO {
