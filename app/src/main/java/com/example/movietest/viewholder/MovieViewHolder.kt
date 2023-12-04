@@ -17,7 +17,7 @@ class MovieViewHolder(view: View) : ViewHolder(view) {
     fun render(resultCall: ResultCall, onClick: (resultCall: ResultCall) -> Unit) {
         movieTitle.text = resultCall.original_title
         resultCall.poster_path.let {
-            Glide.with(this.itemView).load(it).into(movieImage)
+            Glide.with(this.itemView).load("https://www.themoviedb.org/t/p/w94_and_h141_bestv2$it").into(movieImage)
         }
         movieItem.setOnClickListener {
             onClick(resultCall)
