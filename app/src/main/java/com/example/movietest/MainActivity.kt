@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val adapter = MovieAdapter{
-            val intent = Intent(this@MainActivity, MovieDetailsActivity::class.java)
+            val intent = Intent(this@MainActivity, SplashScreen::class.java)
             intent.putExtra("movie", it)
             startActivity(intent)
         }

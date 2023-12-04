@@ -4,25 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MovieDetailsActivity">
+    tools:context=".MovieDetailsActivity"
+    android:background="#A9A9A9">
 
     <TextView
         android:id="@+id/movieDetailsTitleTV"
         android:layout_width="match_parent"
         android:layout_height="100px"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/movieDetailsOverViewTV"
         android:layout_width="match_parent"
-        android:layout_height="150px"
+        android:layout_height="500px"
         android:autoSizeTextType="uniform"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeMaxTextSize="100sp"
         android:autoSizeStepGranularity="2sp"
         app:layout_constraintTop_toBottomOf="@id/movieDetailsTitleTV"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/movieDetailsAddToFavouriteButton"

@@ -21,7 +21,7 @@ class FavouriteMoviesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapter = MovieAdapter{
-            val intent = Intent(this@FavouriteMoviesActivity, MovieDetailsActivity::class.java)
+            val intent = Intent(this@FavouriteMoviesActivity, SplashScreen::class.java)
             intent.putExtra("movie", it)
             startActivity(intent)
         }
