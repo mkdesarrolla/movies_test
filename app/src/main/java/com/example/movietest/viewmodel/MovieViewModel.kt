@@ -1,6 +1,5 @@
 package com.example.movietest.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movietest.model.MResponse
@@ -14,7 +13,6 @@ class MovieViewModel: ViewModel() {
 
     private val movieRepository = MovieRepository()
     fun searchByName(movieTitle: String?) {
-        Log.i("searchByName ViewModel", "Aquí llega")
         CoroutineScope(Dispatchers.Main).launch {
             movieListLiveData.value = movieRepository.getMovieByTitle(movieTitle)
         }

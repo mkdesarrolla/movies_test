@@ -3,12 +3,12 @@ package com.example.movietest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.movietest.adapter.MovieAdapter
 import com.example.movietest.database.MovieDatabase
 import com.example.movietest.databinding.ActivityMainBinding
@@ -18,7 +18,8 @@ import com.example.movietest.viewmodel.MovieViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    lateinit var mRecyclerView : RecyclerView
+    private lateinit var mRecyclerView : RecyclerView
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private val movieViewModel: MovieViewModel by viewModels()
     private var movieList = MResponse(0, listOf(ResultCall()), 0, 0).resultCalls
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        swipeRefreshLayout = binding.swipe
         database =  Room.databaseBuilder(this, MovieDatabase::class.java, "movies-db").build()
 
 
@@ -60,6 +62,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.toFavouriteMoviesButton.setOnClickListener {
             goToFavouriteMoviesActivity()
+        }
+
+        swipeRefreshLayout.setOnRefreshListener {
+            adapter.changeList(emptyList())
+            if (swipeRefreshLayout.isRefreshing) {
+                swipeRefreshLayout.isRefreshing = false;
+            }
         }
     }
 

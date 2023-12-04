@@ -39,9 +39,14 @@ class MovieDetailsActivity : AppCompatActivity() {
                     isMovieInDatabase = !isMovieInDatabase
                 }
             }
-            if (isMovieInDatabase){
+            if (isMovieInDatabase == true){
                 runOnUiThread {
-                    binding.movieDetailsAddToFavouriteButton.visibility = View.INVISIBLE
+                    binding.movieDetailsAddToFavouriteButton.text = "Remove from favourites"
+                }
+                binding.movieDetailsAddToFavouriteButton.setOnClickListener {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        MainActivity.database.movieDao().deleteMovieFromFavourites(movieToCheck)
+                    }
                 }
             }
         }

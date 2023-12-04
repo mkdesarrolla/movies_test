@@ -20,6 +20,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/idSV"
+        app:layout_constraintStart_toStartOf="parent">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/movieRV"
         android:layout_width="match_parent"
@@ -27,6 +34,8 @@
         app:layout_constraintTop_toBottomOf="@id/idSV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <Button
         android:id="@+id/toFavouriteMoviesButton"

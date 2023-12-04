@@ -1,6 +1,7 @@
 package com.example.movietest.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.movietest.model.ResultCall
@@ -12,4 +13,7 @@ interface MovieDAO {
 
     @Insert
     fun addMovieToFavourites(movieEntity : ResultCall):Long
+
+    @Delete
+    fun deleteMovieFromFavourites(movieEntity: ResultCall): Int
 }
